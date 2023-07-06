@@ -32,7 +32,7 @@ pipeline{
     stage("Deploy"){
       steps{
         echo "I am in Deploy job"
-        sh "some script ${SERVER_CREDENTIALS}"
+        sh "some script ${USER} ${PWD}"
         // or you can use this credentials in another way
         withCredentials([
           usernamePassword(credentials: "server-credentials", usernameVariable: USER, passwordVariable: PWD)
